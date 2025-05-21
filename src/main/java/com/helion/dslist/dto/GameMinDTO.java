@@ -1,6 +1,7 @@
 package com.helion.dslist.dto;
 
 import com.helion.dslist.entities.Game;
+import com.helion.dslist.projections.GameMinProjection;
 import jakarta.persistence.Column;
 
 public class GameMinDTO {
@@ -28,6 +29,15 @@ public class GameMinDTO {
 
         this.imgUrl = aGame.getImgUrl();
         this.shortDescription = aGame.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection aProjection){
+        this.id = aProjection.getId();
+        this.title = aProjection.getTitle();
+        this.year = aProjection.getYear();
+
+        this.imgUrl = aProjection.getImgUrl();
+        this.shortDescription = aProjection.getShortDescription();
     }
 
     public Long getId() {
