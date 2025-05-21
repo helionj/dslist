@@ -25,6 +25,7 @@ public class GameMinDTO {
         this.id = aGame.getId();
         this.title = aGame.getTitle();
         this.year = aGame.getYear();
+
         this.imgUrl = aGame.getImgUrl();
         this.shortDescription = aGame.getShortDescription();
     }

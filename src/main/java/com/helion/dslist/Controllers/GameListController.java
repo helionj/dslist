@@ -1,8 +1,7 @@
 package com.helion.dslist.Controllers;
 
-import com.helion.dslist.dto.GameDTO;
-import com.helion.dslist.dto.GameMinDTO;
-import com.helion.dslist.services.GameService;
+import com.helion.dslist.dto.GameListDTO;
+import com.helion.dslist.services.GameListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,19 +11,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/games")
-public class GameController {
+@RequestMapping(value = "/lists")
+public class GameListController {
 
     @Autowired
-    GameService gameService;
+    GameListService gameListService;
 
     @GetMapping
-    public List<GameMinDTO> findAll(){
-        return gameService.findAll();
+    public List<GameListDTO> findAll(){
+        return gameListService.findAll();
     }
 
     @GetMapping(value = "/{id}")
-    public GameDTO findById(@PathVariable Long id) {
-        return gameService.findById(id);
+    public GameListDTO findById(@PathVariable Long id) {
+        return gameListService.findById(id);
     }
 }
